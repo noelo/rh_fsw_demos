@@ -84,8 +84,28 @@
 			<artifactId>switchyard-component-soap</artifactId>
 			<version>${switchyard.version}</version>
 		</dependency>
-		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
-			<type>bundle</type> </dependency> -->
+		<dependency>
+			<groupId>com.redhat.gps</groupId>
+			<artifactId>TestEJBBeta-ejb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-6.0</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>xalan</groupId>
+					<artifactId>xalan</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>net.sourceforge.saxon</groupId>
+					<artifactId>saxonhe</artifactId>
+				</exclusion>
+			</exclusions>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
