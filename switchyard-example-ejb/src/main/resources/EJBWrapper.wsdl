@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="EJBWrapper" targetNamespace="urn:com.example.switchyard:switchyard-example-ejb:1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:com.example.switchyard:switchyard-example-ejb:1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com.example.switchyard:switchyard-example-ejb:1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:com.example.switchyard:switchyard-example-ejb:1.0">
+  <xsd:element name="wrapperMethod2" type="tns:wrapperMethod2"/>
+  <xsd:complexType name="wrapperMethod2">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="string" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="wrapperMethod2Response" type="tns:wrapperMethod2Response"/>
+  <xsd:complexType name="wrapperMethod2Response">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="string" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="wrapperMethod3" type="tns:wrapperMethod3"/>
+  <xsd:complexType name="wrapperMethod3">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="string" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="wrapperMethod3Response" type="tns:wrapperMethod3Response"/>
+  <xsd:complexType name="wrapperMethod3Response">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="string" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="wrapperMethod1" type="tns:wrapperMethod1"/>
+  <xsd:complexType name="wrapperMethod1">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="string" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="wrapperMethod1Response" type="tns:wrapperMethod1Response"/>
+  <xsd:complexType name="wrapperMethod1Response">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="string" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="wrapperMethod1Response">
+    <wsdl:part name="parameters" element="tns:wrapperMethod1Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapperMethod1">
+    <wsdl:part name="parameters" element="tns:wrapperMethod1">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapperMethod3Response">
+    <wsdl:part name="parameters" element="tns:wrapperMethod3Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapperMethod3">
+    <wsdl:part name="parameters" element="tns:wrapperMethod3">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapperMethod2">
+    <wsdl:part name="parameters" element="tns:wrapperMethod2">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapperMethod2Response">
+    <wsdl:part name="parameters" element="tns:wrapperMethod2Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EJBWrapperPortType">
+    <wsdl:operation name="wrapperMethod2">
+      <wsdl:input name="wrapperMethod2" message="tns:wrapperMethod2">
+    </wsdl:input>
+      <wsdl:output name="wrapperMethod2Response" message="tns:wrapperMethod2Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wrapperMethod3">
+      <wsdl:input name="wrapperMethod3" message="tns:wrapperMethod3">
+    </wsdl:input>
+      <wsdl:output name="wrapperMethod3Response" message="tns:wrapperMethod3Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wrapperMethod1">
+      <wsdl:input name="wrapperMethod1" message="tns:wrapperMethod1">
+    </wsdl:input>
+      <wsdl:output name="wrapperMethod1Response" message="tns:wrapperMethod1Response">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EJBWrapperSoapBinding" type="tns:EJBWrapperPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="wrapperMethod2">
+      <soap:operation soapAction="wrapperMethod2" style="document"/>
+      <wsdl:input name="wrapperMethod2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="wrapperMethod2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wrapperMethod3">
+      <soap:operation soapAction="wrapperMethod3" style="document"/>
+      <wsdl:input name="wrapperMethod3">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="wrapperMethod3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wrapperMethod1">
+      <soap:operation soapAction="wrapperMethod1" style="document"/>
+      <wsdl:input name="wrapperMethod1">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="wrapperMethod1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EJBWrapper">
+    <wsdl:port name="EJBWrapperPort" binding="tns:EJBWrapperSoapBinding">
+      <soap:address location="http://localhost:8080/switchyard-example-ejb/EJBWrapper"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

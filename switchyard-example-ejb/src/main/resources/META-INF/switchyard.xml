@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sy:switchyard xmlns="urn:switchyard-config:switchyard:1.1" xmlns:bean="urn:switchyard-component-bean:config:1.1" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:soap="urn:switchyard-component-soap:config:1.1" xmlns:sy="urn:switchyard-config:switchyard:1.1" name="switchyard-example-ejb" targetNamespace="urn:com.example.switchyard:switchyard-example-ejb:1.0">
+  <sca:composite name="switchyard-example-ejb" targetNamespace="urn:com.example.switchyard:switchyard-example-ejb:1.0">
+    <sca:component name="EJBWrapper2Bean">
+      <bean:implementation.bean class="com.example.switchyard.switchyard_example_ejb.EJBWrapper2Bean"/>
+      <sca:service name="EJBWrapper">
+        <sca:interface.java interface="com.example.switchyard.switchyard_example_ejb.EJBWrapper"/>
+      </sca:service>
+    </sca:component>
+    <sca:service name="EJBWrapper" promote="EJBWrapper2Bean/EJBWrapper">
+      <sca:interface.java interface="com.example.switchyard.switchyard_example_ejb.EJBWrapper"/>
+      <soap:binding.soap name="soap1">
+        <soap:wsdl>EJBWrapper.wsdl</soap:wsdl>
+        <soap:wsdlPort>EJBWrapperPort</soap:wsdlPort>
+        <soap:socketAddr>:21032</soap:socketAddr>
+        <soap:contextPath>/ejb</soap:contextPath>
+      </soap:binding.soap>
+    </sca:service>
+  </sca:composite>
+</sy:switchyard>
