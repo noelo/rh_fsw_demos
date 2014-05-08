@@ -17,19 +17,23 @@ import static org.switchyard.policy.SecurityPolicy.AUTHORIZATION;
 import static org.switchyard.policy.SecurityPolicy.CLIENT_AUTHENTICATION;
 import static org.switchyard.policy.SecurityPolicy.CONFIDENTIALITY;
 
-import org.apache.log4j.Logger;
+
+//import org.apache.log4j.Logger;
 import org.switchyard.annotations.Requires;
 import org.switchyard.component.bean.Service;
+import com.redhat.ejb.beta.*;
+import javax.ejb.EJB;
 
 @Requires(security = {CONFIDENTIALITY, CLIENT_AUTHENTICATION, AUTHORIZATION})
 @Service(BackEndService.class)
 public class BackEndServiceBean implements BackEndService {
 
-    private static final Logger LOGGER = Logger.getLogger(BackEndServiceBean.class);
+	@EJB(lookup="java:global/TestEJBBeta-ejb/TestEJBBetaBean") TestEJBBetaBeanLocal tb2;
 
     @Override
     public String process(String in) {
-        LOGGER.info(":: BackEndService :: process => " + in);
+        System.out.println(":: BackEndService :: process => " + in);
+        tb2.firstMethod(in);
         return "Processed by BackEndService: " + in;
     }
 

@@ -19,7 +19,9 @@ import static org.switchyard.policy.SecurityPolicy.CONFIDENTIALITY;
 
 import javax.inject.Inject;
 
-import org.apache.log4j.Logger;
+
+
+//import org.apache.log4j.Logger;
 import org.switchyard.annotations.Requires;
 import org.switchyard.component.bean.Reference;
 import org.switchyard.component.bean.Service;
@@ -28,7 +30,7 @@ import org.switchyard.component.bean.Service;
 @Service(WorkService.class)
 public class WorkServiceBean implements WorkService {
 
-    private static final Logger LOGGER = Logger.getLogger(WorkServiceBean.class);
+//    private static final Logger LOGGER = Logger.getLogger(WorkServiceBean.class);
 
     @Inject
     @Reference
@@ -37,8 +39,8 @@ public class WorkServiceBean implements WorkService {
     @Override
     public WorkAck doWork(Work work) {
         String cmd = work.getCommand();
-        LOGGER.info(":: WorkService :: Received work command => " + cmd);
-        LOGGER.info(":: WorkService :: BackEndService Call => " + backEndService.process(cmd));
+        System.out.println(":: WorkService :: Received work command => " + cmd);
+        System.out.println(":: WorkService :: BackEndService Call => " + backEndService.process(cmd));
         return new WorkAck().setCommand(cmd).setReceived(true);
     }
 
