@@ -3,6 +3,8 @@ package com.redhat.ejb.beta;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.annotation.security.RolesAllowed;
+import org.jboss.ejb3.annotation.SecurityDomain;
 
 /**
  * Session Bean implementation class TestEJBBetaBean
@@ -10,6 +12,8 @@ import javax.ejb.Stateless;
 @Stateless
 @TestEJBQualifier
 @EJB(name = "java:global/TestEJBBetaBean", beanInterface = TestEJBBetaBeanLocal.class)
+//@SecurityDomain("other")
+//@RolesAllowed({ "friend" })
 public class TestEJBBetaBean implements TestEJBBetaBeanLocal {
 
     /**
