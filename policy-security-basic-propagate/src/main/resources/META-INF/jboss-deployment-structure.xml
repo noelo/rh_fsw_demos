@@ -2,6 +2,7 @@
   <deployment>
     <dependencies>
       <module name="deployment.TestEJBBeta-ejb.jar" />
+      <module name="org.picketbox"/>
     </dependencies>
   </deployment>
 </jboss-deployment-structure>
