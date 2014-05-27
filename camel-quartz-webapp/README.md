@@ -13,7 +13,8 @@ Example datasource
 ------------------
 
 
-'''XML
+```XML
+
 <subsystem xmlns="urn:jboss:domain:datasources:1.1">
             <datasources>
                 <datasource jta="false" jndi-name="java:jboss/datasources/QuartzDS" pool-name="QuartzDS" enabled="true">
@@ -28,6 +29,5 @@ Example datasource
                         <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
                     </validation>
                 </datasource>
-               <datasources>
-               </subsystem>
-'''
+
+```
