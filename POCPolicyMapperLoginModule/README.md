@@ -5,11 +5,14 @@ The web service invocation and processing is done in the login method.
 This login-module does not support propagated credentials using UseFirstPass.
 
 Installation
+
 Copy the POCPolicyMapperLoginModule-1.0-SNAPSHOT.jar ${jboss}/modules/com/redhat/gps/security/main/
 
 
 Add the login-module to the JBoss standalone.xml file e.g.
-        ```<subsystem xmlns="urn:jboss:domain:security:1.2">
+
+        ```
+        <subsystem xmlns="urn:jboss:domain:security:1.2">
             <security-domains>
                 <security-domain name="POCMODULE" cache-type="default">
                     <authentication>
@@ -21,6 +24,7 @@ Add the login-module to the JBoss standalone.xml file e.g.
 
 
 Reference the module in the relevant application via a jboss-deployment-structure.xml e.g.
+
     ```<jboss-deployment-structure >
     	<deployment>
     		<dependencies>
