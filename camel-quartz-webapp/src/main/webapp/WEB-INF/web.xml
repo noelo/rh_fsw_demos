@@ -10,8 +10,43 @@
 	</context-param>
 
 	<!-- the listener that kick-starts Spring -->
-	<listener>
+<!-- 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	</listener> -->
+
+
+	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.redhat.gps.test.ScheduleStart</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/test/*</url-pattern>
+	</servlet-mapping>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>MyResourceName</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>MANAGER_OF_res1</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>My kinda secure web application</realm-name>
+	</login-config>
+	<security-role>
+		<description>Role for simple users</description>
+		<role-name>user</role-name>
+	</security-role>
+	<security-role>
+		<description>Role for administrators</description>
+		<role-name>admin</role-name>
+	</security-role>
 
 </web-app>
